@@ -29,15 +29,14 @@ public class UserController {
         return userService.getGenderUsers(info);
     }
 
-    @GetMapping("/weightbetween/{start}/{end}")
+    @GetMapping("/weight-between/{start}/{end}")
     public List<User> getWeightBetween(
             @PathVariable("start") double start,
-            @PathVariable("end") double end
-    ) {
+            @PathVariable("end") double end) {
         return userService.getWeightBetween(start, end);
     }
 
-    @GetMapping("/ageBetween/{start}/{end}")
+    @GetMapping("/age-between/{start}/{end}")
     public List<User> getAgeBetween(
             @PathVariable int start,
             @PathVariable int end ) {
