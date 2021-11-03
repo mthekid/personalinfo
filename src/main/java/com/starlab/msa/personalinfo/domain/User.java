@@ -1,6 +1,8 @@
 package com.starlab.msa.personalinfo.domain;
 
 
+import com.starlab.msa.personalinfo.domain.converter.GenderConverter;
+import com.starlab.msa.personalinfo.domain.converter.RoleConverter;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,6 +14,8 @@ import java.util.Date;
 @EqualsAndHashCode
 @Entity
 @Table(name = "user")
+@Convert(converter = GenderConverter.class, attributeName = "gender")
+@Convert(converter = RoleConverter.class, attributeName = "role")
 public class User {
 
     @Id
@@ -25,12 +29,10 @@ public class User {
     private double weight;
     private Date birthDay;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "gender", nullable = false)
     private Gender gender;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "role", nullable = false)
     private Role role;
 
     public User() {}
