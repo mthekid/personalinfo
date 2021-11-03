@@ -4,7 +4,6 @@ package com.starlab.msa.personalinfo.controller;
 import com.starlab.msa.personalinfo.domain.User;
 import com.starlab.msa.personalinfo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,6 +35,13 @@ public class UserController {
             @PathVariable("end") double end
     ) {
         return userService.getWeightBetween(start, end);
+    }
+
+    @GetMapping("/ageBetween/{start}/{end}")
+    public List<User> getAgeBetween(
+            @PathVariable int start,
+            @PathVariable int end ) {
+        return userService.getAgeBetween(start, end);
     }
 
 }
