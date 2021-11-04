@@ -26,6 +26,11 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	// restful api swagger
+	implementation "io.springfox:springfox-boot-starter:3.0.0"
+	implementation 'io.springfox:springfox-spring-webflux:3.0.0'
+	implementation "io.springfox:springfox-swagger-ui:3.0.0"
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
